@@ -2,12 +2,14 @@
 # sys.path.append("../../..") 
 import os
 os.chdir("C:\\Users\\Administrator\\Desktop\\General_NetSDK_ChnEng_Python_Win64_IS_V3.052.0000001.0.R.200514")
-
 import sys
 sys.path.append("C:\\Users\\Administrator\\Desktop\\General_NetSDK_ChnEng_Python_Win64_IS_V3.052.0000001.0.R.200514")
+
 # os.chdir()
 # os.chdir("C:\Users\Administrator\Desktop\General_NetSDK_ChnEng_Python_Win64_IS_V3.052.0000001.0.R.200514")
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, QHeaderView, QAbstractItemView, QApplication, QGroupBox, QMenu,QTableWidgetItem
+#PyQt is a Python binding of the cross-platform GUI toolkit Qt, implemented as a Python plug-in. PyQt is free software developed by the British firm Riverbank Computing.
+#contains classes that provide a set of UI elements to create classic desktop-style user interfaces.
 from PyQt5.QtCore import Qt
 import types
 from AlarmListenUI import Ui_MainWindow
@@ -180,8 +182,17 @@ class StartListenWnd(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = QApplication(sys.argv)#argc和argv是命令行传进去的参数
+    #QApplication 类管理图形用户界面应用程序的控制流和主要设置。 可以说 QApplication是Qt的整个后台管理的命脉
+    #对于任何一个使用Qt的图形用户界面应用程序，都正好存在一个QApplication对象，而不论这个应用程序在同一时间内是不是有0、1、2或更多个窗口。
+    #
+
     wnd = StartListenWnd()
-    hwnd = wnd
+    hwnd = wnd#global hwnnd
     wnd.show()
     sys.exit(app.exec_())
+    #app.exec_()的作用是运行主循环,app.exec_()在退出时会返回状态代码
+    #不用sys.exit(app.exec_()),只使用app.exec_()，程序也可以正常运行，但是关闭窗口后进程却不会退出。
+    #
+
+
