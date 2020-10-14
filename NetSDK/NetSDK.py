@@ -688,7 +688,7 @@ class NetClient(metaclass=Singleton):
         if not result:
             print(cls.GetLastErrorMessage())
         return result
-
+    
     @classmethod
     def PausePlayBack(cls, playback_id: int, is_pause: bool) -> int:
         """
